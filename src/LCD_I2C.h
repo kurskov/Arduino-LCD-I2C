@@ -66,12 +66,16 @@ class LCD_I2C {
     public:
         // Constructor
         // Usually for address used next values: 0x26, 0x27 or 0x3F. 
-        LCD_I2C(uint8_t addr, uint8_t cols, uint8_t rows);
+        LCD_I2C(uint8_t addr);
+
+        // Initialization
+        init(uint8_t cols, uint8_t rows, uint8_t font = _DK_LCD_FONT_5X7);
 
     private:
         uint8_t _addr;
         uint8_t _cols;
         uint8_t _rows;
+        uint8_t _command;
 }
 
 #endif
